@@ -15,7 +15,6 @@ body {
     font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;   /*フォント種類*/
     font-size: 16px;    /*文字サイズ*/
     line-height: 2;     /*行間*/
-    /*background: #9b1218;  /*背景色*/
     background: linear-gradient(-135deg, #9b1218, #FFFFFF);
     background-attachment: fixed;
     -webkit-text-size-adjust: none;
@@ -46,20 +45,18 @@ a:hover {
 /*ヘッダー（一番上の、ロゴやメニューが入っているブロック）
 ---------------------------------------------------------------------------*/
 header {
-    height: 100%;
+    /*height: 100%;*/
     max-width: 1200px;
+    padding-bottom: 82px;
     margin: 0 auto;
     overflow: auto;
     position: relative;
-    /*background: #ed1c24;  /*背景色*/
-    /*background: linear-gradient(-135deg, #ed1c24, #FFFFFF);*/
 }
 /*ロゴ画像*/
 header #logo img {
     display: block;
     width: 100%; /*画像の幅*/
     max-width: 1200px;
-    /*position: absolute;*/
     margin: 0 auto;
 }
 
@@ -68,7 +65,6 @@ header #logo img {
 /*メニューブロック全体への指定*/
 #menubar {
     position: absolute;
-    /*top: 60%;    /*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
     left: 0px;
     width: 100%;
     text-align: center;
@@ -163,35 +159,6 @@ header #logo img {
     margin-top: -10px;
 }
 
-/*Serviceページ
----------------------------------------------------------------------------*/
-/*各ブロックごとの設定*/
-.list {
-    overflow: hidden;
-    line-height: 1.5;
-    border-bottom: 1px solid #111;  /*下線の幅、線種、色*/
-    padding: 20px;  /*ボックス内の余白*/
-}
-/*１番目のlistブロックへの追加指定。上に線を入れる。*/
-.list:first-of-type {
-    border-top: 1px solid #111;
-}
-/*h4見出しの設定*/
-.list h4 {
-    font-size: 20px;    /*文字サイズ*/
-    margin-bottom: 10px;
-}
-/*画像の設定*/
-.list img {
-    width: 20%;         /*画像幅*/
-    float: left;        /*画像を左に回り込み*/
-    margin-right: 3%    /*画像の右側に空けるスペース*/
-}
-/*段落タグ*/
-.list p {
-    padding: 0 !important;
-}
-
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer {
@@ -213,7 +180,7 @@ footer .pr {
     font-size: 80%;
 }
 
-/*トップページ内「更新情報・お知らせ」ブロック
+/*「What's New」ブロック
 ---------------------------------------------------------------------------*/
 /*ブロック全体の設定*/
 #new dl {
@@ -230,6 +197,9 @@ footer .pr {
 #new dd {
     padding-left: 9em;
 }
+
+/*「Summary」ブロック
+---------------------------------------------------------------------------*/
 
 /*profile
 ---------------------------------------------------------------------------*/
@@ -275,6 +245,50 @@ footer .pr {
     margin: 0 auto 20px;
 }
 
+
+/*「Activity」ブロック
+---------------------------------------------------------------------------*/
+/*各ブロックごとの設定*/
+#activity div.list {
+    overflow: hidden;
+    line-height: 1.5;
+    border-bottom: 2px solid #111;  /*下線の幅、線種、色*/
+    padding: 20px;  /*ボックス内の余白*/
+}
+/*１番目のlistブロックへの追加指定。上に線を入れる。*/
+#activity div.list:first-of-type {
+    border-top: 2px solid #111;
+}
+/*h4見出しの設定*/
+#activity div.list h4 {
+    font-size: 20px;    /*文字サイズ*/
+    margin-bottom: 10px;
+}
+/*画像の設定*/
+#activity div.list .activity-image {
+    width: 20%;         /*画像幅*/
+    margin : 0 3% auto 0;
+    float: left;        /*画像を左に回り込み*/
+}
+#activity div.list .activity-text {
+    overflow: hidden;
+}
+/*段落タグ*/
+#activity div.list p {
+    padding: 0 !important;
+}
+#activity p.activity-h {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+}
+/*BOOTHブロック*/
+#activity .booth-item-image {
+    width: 10%;
+    margin-bottom: 10px;
+}
+
 /*PAGE TOP（↑）設定
 ---------------------------------------------------------------------------*/
 body .nav-fix-pos-pagetop a {
@@ -306,6 +320,47 @@ body.is-fixed-pagetop .nav-fix-pos-pagetop a:hover {
     border-radius: 2px;
     margin: 0px 5px;
     vertical-align: text-top;
+}
+
+/*引用
+---------------------------------------------------------------------------*/
+blockquote {
+    position: relative;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: solid 3px #FFFFFF;
+    border-left-width: 50px;
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -55px;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    content: "“";
+    font-family: sans-serif;
+    color: #9b1218;
+    font-size: 90px;
+    line-height: 1;
+    font-style: italic;
+}
+
+blockquote p {
+    position: relative;
+    padding: 0;
+    margin: 10px 0;
+    z-index: 3;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
 }
 
 /*ul.disc,olタグ
@@ -372,7 +427,7 @@ ul.disc {padding: 0em 25px 15px 40px;list-style: disc;}
     font-size: 14px;    /*文字サイズ*/
 }
 
-/*Serviceページ
+/*Activityページ
 ---------------------------------------------------------------------------*/
 /*h4見出しの設定*/
 .list h4 {
