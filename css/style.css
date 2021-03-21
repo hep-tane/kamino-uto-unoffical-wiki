@@ -273,6 +273,50 @@ footer .pr {
     margin-bottom: 10px;
 }
 
+/*「History」ブロック
+---------------------------------------------------------------------------*/
+/*各ブロックごとの設定*/
+.accordion-box label {
+    padding: 10px;
+    font-weight: bold;
+    border: solid 2px black;
+    cursor :pointer;
+    background: #Ab3238;
+}
+.accordion-box {
+    margin: 2em 0;/*前後の余白*/
+    padding: 0;
+}
+
+/*ボタンホバー時*/
+.accordion-box label:hover {
+    background: #9b1218;
+}
+
+/*チェックは見えなくする*/
+.accordion-box input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.accordion-box .accordion-hidden {
+    height: 0;
+    padding: 0;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+/*クリックで中身表示*/
+.accordion-box input:checked ~ .accordion-hidden {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+
 /*PAGE TOP（↑）設定
 ---------------------------------------------------------------------------*/
 body .nav-fix-pos-pagetop a {
